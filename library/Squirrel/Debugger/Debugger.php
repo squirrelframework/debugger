@@ -81,10 +81,11 @@ class Debugger
      * and let it propagate so other scripts can catch
      * errors in a try catch block.
      *
-     * @param int $code
+     * @throws \ErrorException
+     * @param integer $code
      * @param string $message
      * @param string $file
-     * @param int $line
+     * @param integer $line
      */
     public function error($code, $message, $file, $line)
     {

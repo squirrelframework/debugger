@@ -60,7 +60,7 @@ class DebugFile
      * Get file lines surrounding error line.
      *
      * @param integer $count Count of lines to show (should be odd to center line).
-     * @return array
+     * @return string[]
      */
     public function getSurroundingLines($count = 11)
     {
@@ -71,7 +71,7 @@ class DebugFile
         $lines = file($this->file, FILE_IGNORE_NEW_LINES);
         $lines[] = '';
         $this->surroundingLines = array();
-        $offset = $this->line - (int) ceil($count / 2);
+        $offset = $this->line - (integer) ceil($count / 2);
 
         if ($offset < 0) {
             $count += $offset;
